@@ -16,6 +16,12 @@ h1 {
     line-height: 1;
 }
 
+h3 {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+}
+
 p {
     font-size: 15px;
     font-weight: 400;
@@ -35,6 +41,7 @@ section {
 .container {
     flex: 1 1 100%;
     max-width: 1440px;
+    padding: 50px 50px;
     /* border: 3px solid violet; */
 }
 
@@ -50,6 +57,7 @@ section {
 
 .top-left {
     text-align: left;
+    flex-basis: 80%;
 }
 
 .top-left p {
@@ -74,7 +82,7 @@ section {
 }
 
 .rating1, .rating2, .rating3 {
-    width: 500px;
+    /* width: 500px; */
     margin: 10px 15px; 
     padding: 15px 15px;
     border-radius: 10px;
@@ -103,13 +111,11 @@ section {
     margin-top: 50px;
     display: flex;
     /* border: 3px solid red; */
-    min-height: 350px;
+    min-height: 320px;
     justify-content: space-between;
 }
 
-.bottom >* {
-    /* max-height: 500px; */
-}
+
 
 .box-container1, .box-container2, .box-container3 { /*Make the boxes of card into flex for alignment*/
     display: flex;
@@ -130,18 +136,85 @@ section {
 
 .box-container1 >*, .box-container2 >*, .box-container3 >* { /*Select all direct children and make them grow shrink with 100% flex basis*/
     flex: 1 1 100%;
+    
 }
 
 
 .box1, .box2, .box3 {  /*add background color to the cards*/
     border-radius: 10px;
-    min-width: 450px;
-    min-height: 300px;
     padding: 40px 40px;
     background-color: hsl(300, 43%, 22%);
-    /* border: 3px solid yellow; */
-    
+    /* max-height: 250px; */
 }
 
+.box2 { /*adds margin to left and right when resized*/
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
+.profile {
+    display: flex;
+    align-items: center;
+}
 
+.profile-image img {
+    border-radius: 100px;
+    max-width: 80%;
+}
+
+.verified-buyer {
+    color:hsl(333, 80%, 67%, 0.5);
+    padding-top: 5px;
+}
+
+.testimonials-text {
+    margin-top: 10px;
+    color: hsl(300, 24%, 96%);
+}
+
+/*Media Queries*/
+@media (max-width: 950px) {
+    .top {
+        flex-direction: column;
+    }
+
+    .top-right {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 750px) {
+    .bottom {
+        flex-direction: column;
+    }
+
+    .top-left {
+        text-align: center;
+    }
+
+    .box-container1, .box-container2, .box-container3 {
+        padding: 10px 0px;
+    }
+
+    .box2 { /*removes the maring in mobile view*/
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+     
+}
+
+@media (max-width: 600px) {
+    .rating1, .rating2, .rating3 { /*change display into column with 100% width*/
+        flex-direction: column;
+        flex: 1 1 100%;
+    }
+
+    .top-right1, .top-right2, .top-right3 { /*align the container and its content*/
+        justify-content: center;
+        text-align: center;
+    }
+
+    .rating-text {
+        margin-top: 10px; /*add white space to the stars*/
+    }
+}
