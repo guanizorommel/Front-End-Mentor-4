@@ -20,7 +20,7 @@ p {
     font-size: 15px;
     font-weight: 400;
     color: hsl(303, 10%, 53%);
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 
@@ -30,6 +30,12 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.container {
+    flex: 1 1 100%;
+    max-width: 1440px;
+    border: 3px solid violet;
 }
 
 
@@ -90,5 +96,37 @@ section {
     color:hsl(300, 43%, 22%);
     font-weight: 700;
 }
+
+/*Bottom Cards CSS*/
+
+.bottom {
+    margin-top: 50px;
+    display: flex;
+    border: 3px solid red;
+    min-height: 600px;
+}
+
+.bottom >* {
+    /* flex: 1 1 100%; */
+}
+
+.box-container1, .box-container2, .box-container3 { /*Make the boxes of card into flex for alignment*/
+    display: flex;
+    /* border: 3px solid blue; */
+}
+
+.box-container1 >*, .box-container2 >*, .box-container3 >* { /*Select all direct children and make them grow shrink with 100% flex basis*/
+}
+
+
+.box1 {  /*add background color to the cards*/
+    max-width: 800px;
+    max-height: 300px;
+    padding: 10px 10px;
+    background-color: hsl(300, 43%, 22%);
+    /* border: 3px solid yellow; */
+    
+}
+
 
 
