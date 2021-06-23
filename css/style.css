@@ -35,7 +35,7 @@ section {
 .container {
     flex: 1 1 100%;
     max-width: 1440px;
-    border: 3px solid violet;
+    /* border: 3px solid violet; */
 }
 
 
@@ -102,12 +102,13 @@ section {
 .bottom {
     margin-top: 50px;
     display: flex;
-    border: 3px solid red;
-    min-height: 600px;
+    /* border: 3px solid red; */
+    min-height: 350px;
+    justify-content: space-between;
 }
 
 .bottom >* {
-    /* flex: 1 1 100%; */
+    /* max-height: 500px; */
 }
 
 .box-container1, .box-container2, .box-container3 { /*Make the boxes of card into flex for alignment*/
@@ -115,14 +116,28 @@ section {
     /* border: 3px solid blue; */
 }
 
+.box-container1 {
+    align-items: flex-start;
+}
+
+.box-container2 {
+    align-items: center;
+}
+
+.box-container3 {
+    align-items: flex-end;
+}
+
 .box-container1 >*, .box-container2 >*, .box-container3 >* { /*Select all direct children and make them grow shrink with 100% flex basis*/
+    flex: 1 1 100%;
 }
 
 
-.box1 {  /*add background color to the cards*/
-    max-width: 800px;
-    max-height: 300px;
-    padding: 10px 10px;
+.box1, .box2, .box3 {  /*add background color to the cards*/
+    border-radius: 10px;
+    min-width: 450px;
+    min-height: 300px;
+    padding: 40px 40px;
     background-color: hsl(300, 43%, 22%);
     /* border: 3px solid yellow; */
     
